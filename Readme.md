@@ -23,10 +23,10 @@
 
 利用政府開放資料平台 API，製作不同「人口數、戶數性別」等等的查詢簡易面板，主要使用:
 
->🌋 React
->🌋 React Router V6 `>>` 建立路由
->🌋 Material UI `>>` 初判樣式，應以 `MUI` 為主要設計來源。
->🌋 HighCharts `>>` 推薦套件。
+- 🌋 React
+- 🌋 React Router V6 `>>` 建立路由
+- 🌋 Material UI `>>` 初判樣式，應以 `MUI` 為主要設計來源。
+- 🌋 HighCharts `>>` 推薦套件。
 
 ---
 
