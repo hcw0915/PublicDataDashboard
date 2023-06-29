@@ -16,7 +16,6 @@ export const useStyles = makeStyles((theme) => ({
   },
   upperSection: {
     minWidth: '100%',
-    margin: '30px 0 0 0 ',
     [theme.breakpoints.down('md')]: {
       width: '100%',
     },
@@ -58,7 +57,7 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '80%',
+    width: '70%',
     height: '1px',
 
     margin: '55px 0px',
@@ -145,6 +144,7 @@ export const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     overflowY: 'auto',
+    height: '700px',
     [theme.breakpoints.down('md')]: {
       overflowY: 'hidden',
       width: '100%',
