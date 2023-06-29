@@ -15,7 +15,7 @@
 
 ### Addition:
 
-❌ Typescript `>>` Just start learning Typescript about a week, it isn't enough to use it in this project.
+- ❌ Typescript `>>` Just start learning Typescript about a week, it isn't enough to use it in this project.
 
 ---
 
