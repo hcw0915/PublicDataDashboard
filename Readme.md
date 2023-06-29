@@ -1,5 +1,7 @@
 # Public Data Dashboard
 
+![image](https://github.com/hcw0915/PublicDataDashboard/blob/main/md_asset/Demo1.gif)
+
 ### Requirements:
 
 - ✅ React
@@ -28,7 +30,6 @@
 
 ---
 
-![image](https://github.com/hcw0915/PublicDataDashboard/blob/main/md_asset/Demo1.gif)
 過程中遇到幾個思考點、問題點:
 
 ⁉️ 1. 過去大多都以 `Eslint-Standard` 為主要 coding style，還是花一小部份時間實踐適應。
