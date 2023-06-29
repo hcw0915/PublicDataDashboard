@@ -28,7 +28,6 @@ export const useStyles = makeStyles((theme) => ({
     margin: '30px 0 0 0 ',
     fontSize: '2rem',
     [theme.breakpoints.down('md')]: {
-      // backgroundColor: '#495306',
       margin: '0',
       fontSize: '1.6rem',
     },
@@ -48,7 +47,6 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       width: '90%',
       backgroundColor: '#49536',
-      // border: '10px dash #e0e909',
     },
   },
   button: {
@@ -139,18 +137,11 @@ export const useStyles = makeStyles((theme) => ({
 
   // Charts
   chartsContainer: {
-    // width: '4000px',
-    // width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    // justifyContent: 'center',
     alignItems: 'center',
-    // maxHeight: '700px',
     overflowY: 'auto',
-    // backgroundColor: '#ee8e8e',
-
     [theme.breakpoints.down('md')]: {
-      // backgroundColor: '#ee8e8e',
       overflowY: 'hidden',
       width: '100%',
       height: '100%',
