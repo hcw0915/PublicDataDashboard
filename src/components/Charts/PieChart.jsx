@@ -38,6 +38,7 @@ const PieChart = ({
       pie: {
         allowPointSelect: true,
         cursor: 'pointer',
+        showInLegend: true,
         dataLabels: {
           enabled: true,
           format: '{point.percentage:.1f} %',

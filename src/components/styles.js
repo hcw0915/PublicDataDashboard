@@ -5,13 +5,13 @@ export const useStyles = makeStyles((theme) => ({
   dashboardContainer: {
     display: 'flex',
     alignItems: 'center',
-    flexDirection: 'column',
     minWidth: '91%',
+    flexDirection: 'column',
     [theme.breakpoints.down('md')]: {
       position: 'absolute',
-      backgroundColor: 'rgba(255,255,255,0.9)',
-      height: '100%',
       width: '100%',
+      height: '100%',
+      backgroundColor: 'rgba(255,255,255,0.9)',
     },
   },
   upperSection: {
@@ -40,13 +40,11 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       display: 'flex',
       flexDirection: 'column',
-      zIndex: '10',
     },
   },
   selects: {
     [theme.breakpoints.down('md')]: {
       width: '90%',
-      backgroundColor: '#49536',
     },
   },
   button: {
@@ -60,9 +58,10 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: '55px 0px',
-    height: '1px',
     width: '80%',
+    height: '1px',
+
+    margin: '55px 0px',
     backgroundColor: '#C29FFF',
     [theme.breakpoints.down('md')]: {
       width: '90%',
@@ -72,22 +71,22 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '35px',
     width: '100px',
-    padding: '5px',
-    borderRadius: '20px',
-    color: '#C29FFF',
-    backgroundColor: '#ffffff',
+    height: '35px',
     border: '1px solid #C29FFF',
+    borderRadius: '20px',
+    padding: '5px',
+    backgroundColor: '#ffffff',
+    color: '#C29FFF',
     [theme.breakpoints.down('md')]: {
       fontSize: '25px',
     },
   },
   chartSection: {
-    width: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    width: '100%',
     [theme.breakpoints.down('md')]: {
       width: '100%',
       fontSize: '1',
@@ -125,6 +124,7 @@ export const useStyles = makeStyles((theme) => ({
       width: '30%',
     },
   },
+
   // for TextField
   focusedInput: {
     '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
@@ -136,6 +136,10 @@ export const useStyles = makeStyles((theme) => ({
   },
 
   // Charts
+  chartTitle: {
+    fontSize: '2rem',
+    marginBottom: '2rem',
+  },
   chartsContainer: {
     display: 'flex',
     flexDirection: 'column',
@@ -156,6 +160,7 @@ export const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
+
   // pieChart
   pieChartContainer: {
     width: '1000px',

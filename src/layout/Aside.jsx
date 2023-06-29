@@ -1,7 +1,7 @@
 const Aside = () => (
   <div>
     <br />
-    <img src="/brandTaiwan.png" alt="Taiwan" style={{ height: '88vh' }} />
+    <img src="/brandTaiwan.png" alt="Taiwan" style={{ height: '95%' }} />
   </div>
 );
 

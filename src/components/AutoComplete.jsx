@@ -1,7 +1,7 @@
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Stack from '@mui/material/Stack';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 import { useStyles } from './styles';
 
 /**
@@ -51,6 +51,7 @@ const AutoCompletedInput = ({
           getOptionLabel={(option) => option.toString()}
           id="controlled-demo"
           value={location.county || null}
+          disabled={!location.year}
           onChange={(e, newValue) => handleLocationSelected(e, newValue)}
           renderInput={(params) => (
             <TextField
@@ -77,6 +78,7 @@ const AutoCompletedInput = ({
           id="controlled-demo"
           value={location.district || null}
           onChange={(e, newValue) => handleLocationSelected(e, newValue)}
+          disabled={!location.county}
           renderInput={(params) => (
             <TextField
               {...params}

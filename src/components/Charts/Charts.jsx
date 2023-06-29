@@ -42,7 +42,7 @@ const Charts = ({ chartData }) => {
 
   return (
     <Box className={classes.chartsContainer}>
-      <h1>
+      <h1 className={classes.chartTitle}>
         {year}年 {county} {district}
       </h1>
       <BarChart chartDataCalculated={chartDataCalculated || JSON.parse(data)} />

@@ -12,8 +12,5 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': 'warn',
-    'linebreak-style': 'off',
-    'comma-dangle': 'off',
-    'react/prop-types': 0,
   },
 };
