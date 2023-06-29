@@ -2,15 +2,14 @@
 
 ### Requirements:
 
-✅ React
-✅ GitHub upload - [Github Repo](https://github.com/hcw0915/PublicDataDashboard)
-✅ live Demo / Deployment - [Vercel links](https://public-data-dashboard.vercel.app/)
-✅ Airbnb coding style `>>` Although I did install the eslint (airbnb) but still need time to learn more about it.
-✅ Submit button: All fields must be selected, otherwise, the button should be disabled
-✅ The selection menus for "縣/市" and "區", need to use autocomplete selector to help users quickly find the desired option
-✅ The selection menu for "區" is disabled until "縣/市" is selected When the selection for "縣/市" changes, the value for "區" should be cleared
-
-✅ Router `>>` `http:localhost:5173/` , `http:localhost:5173/110/臺北市/松山區`
+- ✅ React
+- ✅ GitHub upload - [Github Repo](https://github.com/hcw0915/PublicDataDashboard)
+- ✅ live Demo / Deployment - [Vercel links](https://public-data-dashboard.vercel.app/)
+- ✅ Airbnb coding style `>>` Although I did install the eslint (airbnb) but still need time to learn more about it.
+- ✅ Submit button: All fields must be selected, otherwise, the button should be disabled
+- ✅ The selection menus for "縣/市" and "區", need to use autocomplete selector to help users quickly find the desired option
+- ✅ The selection menu for "區" is disabled until "縣/市" is selected When the selection for "縣/市" changes, the value for "區" should be cleared
+- ✅ Router `>>` `http:localhost:5173/` , `http:localhost:5173/110/臺北市/松山區`
 
 ### Addition:
 
@@ -29,8 +28,7 @@
 
 ---
 
-![image]('./md_asset/Demo1.gif')
-
+![image]('https://github.com/hcw0915/PublicDataDashboard/blob/main/md_asset/Demo1.gif')
 過程中遇到幾個思考點、問題點:
 
 ⁉️ 1. 過去大多都以 `Eslint-Standard` 為主要 coding style，還是花一小部份時間實踐適應。
