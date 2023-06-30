@@ -2,7 +2,7 @@
 
 ![image](https://github.com/hcw0915/PublicDataDashboard/blob/main/md_asset/Demo1.gif)
 
-### Requirements:
+### 😀 Requirements:
 
 - ✅ React
 - ✅ GitHub upload - [Github Repo](https://github.com/hcw0915/PublicDataDashboard)
@@ -13,20 +13,20 @@
 - ✅ The selection menu for "區" is disabled until "縣/市" is selected When the selection for "縣/市" changes, the value for "區" should be cleared
 - ✅ Router `>>` `http:localhost:5173/` , `http:localhost:5173/110/臺北市/松山區`
 
-### Addition:
+### 😀Addition:
 
-❌ Typescript `>>` Just start learning Typescript about a week, it isn't enough to use it in this project.
+- ❌ Typescript `>>` Just start learning Typescript about a week, it isn't enough to use it in this project.
 
 ---
 
-### 專案內容
+### 😀專案內容
 
 利用政府開放資料平台 API，製作不同「人口數、戶數性別」等等的查詢簡易面板，主要使用:
 
-🌋 React
-🌋 React Router V6 `>>` 建立路由
-🌋 Material UI `>>` 初判樣式，應以 `MUI` 為主要設計來源。
-🌋 HighCharts `>>` 推薦套件。
+- 🌋 React
+- 🌋 React Router V6 `>>` 建立路由
+- 🌋 Material UI `>>` 初判樣式，應以 `MUI` 為主要設計來源。
+- 🌋 HighCharts `>>` 推薦套件。
 
 ---
 
@@ -49,7 +49,7 @@
 
 ---
 
-### 心得
+### 😀心得
 
 前一週，剛對於狀態管理、資料夾結構上有新的概念，雖然這次題目是偏小的專案，但是我覺得非常適合練習(上述第三點)，雖然對於狀態管理上並沒有過多區分，但是也算是在實務中將學習到的一些小技巧與以前沒有注意的事情，做一個練習。
 
