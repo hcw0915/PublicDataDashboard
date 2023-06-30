@@ -39,7 +39,6 @@ const Charts = ({ chartData }) => {
       );
     }
   }, [chartData, keyword]);
-  console.log('chart', chartDataCalculated);
 
   return (
     <Box className={classes.chartsContainer}>
