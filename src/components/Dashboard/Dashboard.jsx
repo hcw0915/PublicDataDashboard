@@ -1,81 +1,83 @@
-import { useEffect, useState } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 
 // UIs
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
 
 // functions & Components & styles
-import Charts from '../Charts';
-import AutoCompletedInput from '../AutoComplete.jsx';
-import { useStyles } from '../styles';
-import { getData, getAreaFormatted } from '../functions';
+import Charts from '../Charts'
+import AutoCompletedInput from '../AutoComplete.jsx'
+import { useStyles } from '../styles'
+import { getData, getAreaFormatted } from '../functions'
 
 // Constants
 
-const BASE_URL = 'https://www.ris.gov.tw/rs-opendata/api/';
+const BASE_URL = 'https://www.ris.gov.tw/rs-opendata/api/'
 
-const initialSelections = { year: [], county: [], district: [] };
-const initialLocation = { year: '', county: '', district: '' };
+const initialSelections = { year: [], county: [], district: [] }
+const initialLocation = { year: '', county: '', district: '' }
 
 const Dashboard = () => {
-  const [selections, setSelections] = useState(initialSelections);
-  const [location, setLocation] = useState(initialLocation);
-  const [unChangableDistricts, setUnChangableDistricts] = useState([]);
-  const [chartData, setChartData] = useState({});
-  const navigate = useNavigate();
-  const classes = useStyles();
+  const [selections, setSelections] = useState(initialSelections)
+  const [location, setLocation] = useState(initialLocation)
+  const [unChangableDistricts, setUnChangableDistricts] = useState([])
+  const [chartData, setChartData] = useState({})
+  const navigate = useNavigate()
+  const classes = useStyles()
 
   const handleSubmit = () => {
-    const { year, county, district } = location;
-    navigate(`/${year}/${county}/${district}`);
-  };
+    const { year, county, district } = location
+    navigate(`/${year}/${county}/${district}`)
+  }
 
   const handleLocationSelected = (e, value) => {
-    const name = e.target.getAttribute('data-name');
+    const name = e.target.getAttribute('data-name')
     if (name === 'year') {
-      setLocation((prev) => ({ ...prev, county: '', district: '' }));
+      setLocation((prev) => ({ ...prev, county: '', district: '' }))
     }
     if (name === 'county') {
-      setLocation((prev) => ({ ...prev, district: '' }));
+      setLocation((prev) => ({ ...prev, district: '' }))
+      console.log(unChangableDistricts)
       const filteredDistricts = unChangableDistricts
         .filter((item) => item.startsWith(value))
-        .map((ele) => ele.slice(3));
-      setSelections((prev) => ({ ...prev, district: filteredDistricts }));
+        .map((ele) => ele.slice(3))
+      setSelections((prev) => ({ ...prev, district: filteredDistricts }))
     }
-    setLocation((prev) => ({ ...prev, [name]: value }));
-  };
+    setLocation((prev) => ({ ...prev, [name]: value }))
+  }
 
   // <- useEffect -> Get initial Years which is available in API Docs.
   useEffect(() => {
     getData(`${BASE_URL}Main/docs/v1`).then((data) => {
       const yearArray =
-        data.paths['/ODRP019/{yyy}'].get.parameters[0].enum ?? [];
-      setSelections({ ...selections, year: yearArray });
-    });
-  }, []);
+        data.paths['/ODRP019/{yyy}'].get.parameters[0].enum ?? []
+      setSelections({ ...selections, year: yearArray })
+    })
+  }, [])
 
   // <- useEffect -> Get other options according to years we've selected.
   useEffect(() => {
     if (location.year) {
       getData(`${BASE_URL}v1/datastore/ODRP019/`, location.year).then(
         (data) => {
-          const [counties, countyWithDisty] = getAreaFormatted(data);
-          setSelections((prev) => ({ ...prev, county: counties }));
+          // console.log(data)
+          const [counties, countiesAndDistricts] = getAreaFormatted(data)
+          setSelections((prev) => ({ ...prev, county: counties }))
           if (JSON.stringify(data.responseData) !== JSON.stringify(chartData)) {
-            setChartData(data.responseData);
+            setChartData(data.responseData)
           }
           if (
-            JSON.stringify(countyWithDisty) !==
+            JSON.stringify(countiesAndDistricts) !==
             JSON.stringify(unChangableDistricts)
           ) {
-            setUnChangableDistricts(countyWithDisty);
+            setUnChangableDistricts(countiesAndDistricts)
           }
         }
-      );
+      )
     }
-  }, [location.year]);
+  }, [location.year])
 
   return (
     <Box className={classes.dashboardContainer}>
@@ -115,7 +117,7 @@ const Dashboard = () => {
         </Routes>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard
