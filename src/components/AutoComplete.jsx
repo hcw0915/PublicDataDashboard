@@ -1,8 +1,8 @@
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
-import { useStyles } from './styles';
+import TextField from '@mui/material/TextField'
+import Autocomplete from '@mui/material/Autocomplete'
+import Stack from '@mui/material/Stack'
+import Box from '@mui/material/Box'
+import { useStyles } from './styles'
 
 /**
  * In this component, i didn't use Mapping to achieve the results.
@@ -17,7 +17,7 @@ const AutoCompletedInput = ({
   selections,
   handleLocationSelected,
 }) => {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <Box className={classes.stackContainer}>
       <Stack className={classes.yearContainer}>
@@ -34,7 +34,6 @@ const AutoCompletedInput = ({
               variant="outlined"
               size="small"
               placeholder="年份"
-              focused
               className={classes.focusedInput}
             />
           )}
@@ -98,7 +97,7 @@ const AutoCompletedInput = ({
         />
       </Stack>
     </Box>
-  );
-};
+  )
+}
 
-export default AutoCompletedInput;
+export default AutoCompletedInput

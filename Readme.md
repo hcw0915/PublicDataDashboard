@@ -26,6 +26,7 @@
 - 🌋 React
 - 🌋 React Router V6 `>>` 建立路由
 - 🌋 Material UI `>>` 初判樣式，應以 `MUI` 為主要設計來源。
+  > makeStyles 已經被列為 lagacy，應修正。
 - 🌋 HighCharts `>>` 推薦套件。
 
 ---
