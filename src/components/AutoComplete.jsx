@@ -42,7 +42,7 @@ const AutoCompletedInput = ({
 
   return (
     <Box className={classes.stackContainer}>
-      {/* {inputMapping.map((input, index) => {
+      {inputMapping.map((input, index) => {
         return (
           <Stack className={input.style} key={index}>
             <Autocomplete
@@ -71,8 +71,8 @@ const AutoCompletedInput = ({
             />
           </Stack>
         )
-      })} */}
-      <Stack className={classes.yearContainer}>
+      })}
+      {/* <Stack className={classes.yearContainer}>
         <Autocomplete
           options={selections.year}
           getOptionLabel={(option) => option.toString()}
@@ -150,7 +150,7 @@ const AutoCompletedInput = ({
             </li>
           )}
         />
-      </Stack>
+      </Stack> */}
     </Box>
   )
 }
