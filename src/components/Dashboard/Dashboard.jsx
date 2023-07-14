@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
 
 // UIs
 import Box from '@mui/material/Box'
@@ -10,10 +10,9 @@ import Button from '@mui/material/Button'
 import Charts from '../Charts'
 import AutoCompletedInput from '../AutoComplete.jsx'
 import { useStyles } from '../styles'
-import { getData, getAreaFormatted } from '../functions'
+import { fetchData, getAreaFormatted } from '../functions'
 
 // Constants
-
 const BASE_URL = 'https://www.ris.gov.tw/rs-opendata/api/'
 
 const initialSelections = { year: [], county: [], district: [] }
@@ -33,6 +32,7 @@ const Dashboard = () => {
   }
 
   const handleLocationSelected = (e, value) => {
+    console.log('value', e.target)
     const name = e.target.getAttribute('data-name')
     if (name === 'year') {
       setLocation((prev) => ({ ...prev, county: '', district: '' }))
@@ -50,7 +50,7 @@ const Dashboard = () => {
 
   // <- useEffect -> Get initial Years which is available in API Docs.
   useEffect(() => {
-    getData(`${BASE_URL}Main/docs/v1`).then((data) => {
+    fetchData(`${BASE_URL}Main/docs/v1`).then((data) => {
       const yearArray =
         data.paths['/ODRP019/{yyy}'].get.parameters[0].enum ?? []
       setSelections({ ...selections, year: yearArray })
@@ -60,7 +60,7 @@ const Dashboard = () => {
   // <- useEffect -> Get other options according to years we've selected.
   useEffect(() => {
     if (location.year) {
-      getData(`${BASE_URL}v1/datastore/ODRP019/`, location.year).then(
+      fetchData(`${BASE_URL}v1/datastore/ODRP019/`, location.year).then(
         (data) => {
           // console.log(data)
           const [counties, countiesAndDistricts] = getAreaFormatted(data)

@@ -18,8 +18,60 @@ const AutoCompletedInput = ({
   handleLocationSelected,
 }) => {
   const classes = useStyles()
+
+  const inputMapping = [
+    {
+      name: 'year',
+      label: '年份',
+      description: '年份',
+      style: classes.yearContainer,
+    },
+    {
+      name: 'county',
+      label: '縣/市',
+      description: '請選擇 縣/市',
+      style: classes.inputContainer,
+    },
+    {
+      name: 'district',
+      label: '區',
+      description: '請先選擇 縣/市',
+      style: classes.inputContainer,
+    },
+  ]
+
   return (
     <Box className={classes.stackContainer}>
+      {/* {inputMapping.map((input, index) => {
+        return (
+          <Stack className={input.style} key={index}>
+            <Autocomplete
+              options={selections[input.name]}
+              getOptionLabel={(option) => option.toString()}
+              id="controlled-demo"
+              value={location[input.name] || null}
+              onChange={(e, newValue) => handleLocationSelected(e, newValue)}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  className={classes.focusedInput}
+                  label={input.label}
+                  placeholder={input.description}
+                  size="small"
+                  variant="outlined"
+                />
+              )}
+              renderOption={(props, option) => {
+                return (
+                  <li {...props} data-name={input.name}>
+                    {option}
+                  </li>
+                )
+              }}
+            />
+          </Stack>
+        )
+      })} */}
       <Stack className={classes.yearContainer}>
         <Autocomplete
           options={selections.year}
@@ -37,11 +89,14 @@ const AutoCompletedInput = ({
               className={classes.focusedInput}
             />
           )}
-          renderOption={(props, option) => (
-            <li {...props} data-name="year">
-              {option}
-            </li>
-          )}
+          renderOption={(props, option) => {
+            console.log('props', props)
+            return (
+              <li {...props} data-name="year">
+                {option}
+              </li>
+            )
+          }}
         />
       </Stack>
       <Stack className={classes.inputContainer}>
@@ -64,7 +119,7 @@ const AutoCompletedInput = ({
             />
           )}
           renderOption={(props, option) => (
-            <li {...props} data-name="county">
+            <li data-name="county" {...props}>
               {option}
             </li>
           )}
